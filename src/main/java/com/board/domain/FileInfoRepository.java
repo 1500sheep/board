@@ -2,5 +2,5 @@ package com.board.domain;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MemberRepository extends JpaRepository<Member, Long> {
+public interface FileInfoRepository extends JpaRepository<FileInfo, Long> {
 }

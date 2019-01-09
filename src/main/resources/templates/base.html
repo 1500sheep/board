@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>구루미 게시판</title>
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/css/base.css" rel="stylesheet">
+
+    <script src="/js/lib/jquery-3.3.1.slim.min.js" defer></script>
+    <script src="/js/lib/bootstrap.min.js" defer></script>
+    <script src="/js/base.js" type="module" defer></script>
+
+    {{#block "header"}}
+    {{/block}}
+</head>
+
+<body>
+
+{{#block "navigation"}}
+<header class="main-header">
+    <div class="fix-width-center mb-2">
+        <nav class="navbar">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="/">
+                        <img src="/images/logo.jpg" width="120" alt="logo">
+                    </a>
+                </div>
+                <ul class="nav">
+                    {{^ loginedUser }}
+                    <li class="nav-item">
+                        <small><a class="nav-link" href="/login">로그인</a></small>
+                    </li>
+                    <li class="nav-item">
+                        <small><a class="nav-link" href="/signup">회원가입</a></small>
+                    </li>
+                    {{/ loginedUser }}
+                    {{# loginedUser }}
+                    <li class="nav-item">
+                        <small><a class="nav-link logout" href="/logout">로그아웃</a></small>
+                    </li>
+                    <li class="nav-item">
+                        <small><a class="nav-link user" href="/users/{{id}}" data-column="{{id}}">마이페이지</a></small>
+                    </li>
+
+                        {{# roles}}
+                            <li class="nav-item">
+                                <small><a class="nav-link admin" href="/admin">관리자 페이지</a></small>
+                            </li>
+                        {{/ roles}}
+
+                    {{/ loginedUser }}
+                </ul>
+            </div>
+        </nav>
+
+    </div>
+</header>
+{{/block}}
+
+{{#block "contents"}}
+{{/block}}
+
+{{#block "footer"}}
+<footer class="main-footer">
+    <div class="py-5">
+        <span class="text-muted d-block">구루미</span>
+        <span class="copyright text-muted d-block">© <strong>Gooroomee Corp.</strong> All right Reserved</span>
+    </div>
+</footer>
+{{/block}}
+
+</body>
+</html>

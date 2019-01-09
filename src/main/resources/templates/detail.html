@@ -1,0 +1,28 @@
+{{#partial "header"}}
+<script src="/js/detail.js" type="module" defer></script>
+{{/partial}}
+
+{{#partial "contents"}}
+<div class="card">
+    {{# loginedUser }}
+    <input type="hidden" name="user-id" data-column="{{id}}">
+    {{/ loginedUser}}
+    <div class="card-header">
+        상세 페이지
+    </div>
+    <div class="card-body">
+
+
+    </div>
+    <div class="card-footer">
+        <button type="button" class="btn btn-primary" name="update" style="display:none;">수정</button>
+        <button type="button" class="btn btn-secondary" name="delete" style="display:none;">삭제</button>
+        <!--<button type="button" class="btn btn-success" name="save" style="display:none;">저장</button>-->
+        <button type="button" class="btn btn-info" name="register-reply" style="display:none;">댓글 등록</button>
+    </div>
+</div>
+<div class="col reply"></div>
+
+<ul class="post-reply-list"></ul>
+{{/partial}}
+{{> base }}
