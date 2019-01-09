@@ -1,0 +1,112 @@
+html,
+body {
+    font-family: Lato, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.fix-width-center {
+    width: 1000px;
+    margin: auto;
+}
+
+.remote-top {
+    margin-top: 10px;
+}
+
+.title {
+    font-size: 0.5rem;
+}
+
+.meeting-check-top {
+    width: 100%;
+    border-top: 1px solid #898b8d;
+    margin-top: 50px;
+}
+
+.reserve-box {
+    margin-top: 10px;
+}
+
+ol {
+    list-style: none;
+}
+
+.timetable {
+    display: flex;
+    background: #ecf0f1;
+    color: #444;
+}
+
+.nowMarker {
+    position: absolute;
+    border-bottom: 2px solid #ff7f6e;
+    z-index: 100;
+    width: 100%;
+    top: -2px;
+    transition: top 2s ease-in-out;
+}
+
+.timings {
+    margin: 1em 0 0 0;
+    padding: 0 3px 0 0;
+    width: 3em;
+    height: 102em;
+    display: flex;
+    flex-direction: column;
+    /*flex-direction: row;*/
+    align-items: flex-end;
+    justify-content: space-around;
+}
+
+.meeting-table {
+    margin: 0;
+    display: -webkit-flex;
+    display: flex;
+    overflow-x: auto;
+    padding: 0;
+    width: 100%;
+}
+
+.room {
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding: 0;
+    min-width: calc(100.5% / 10);
+    transition: min-width 0.2s ease-in-out;
+}
+
+.name {
+    display: block;
+    height: 3em;
+    line-height: 3em;
+    text-align: center;
+}
+
+.hour {
+    height: 4em;
+}
+
+.repeat-one {
+    background: #27ae60;
+    position: absolute;
+    text-indent: 3px;
+    width: 100%;
+    color: white;
+}
+
+.repeat-many {
+    background: #3498db;
+    position: absolute;
+    text-indent: 3px;
+    width: 100%;
+    color: white;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    height: 48px;
+    background: #aaa;
+}
