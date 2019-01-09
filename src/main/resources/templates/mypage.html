@@ -1,0 +1,42 @@
+{{#partial "header"}}
+<script src="/js/mypage.js" type="module" defer></script>
+{{/partial}}
+<body>
+{{#partial "contents"}}
+{{# loginedUser }}
+<div class="user-detail" style="display: inline-block; text-align: center">
+    <form id="user-form" method="post" enctype="multipart/form-data">
+        <!--<input type="hidden" name="_method" value="put">-->
+        <h1 class="user-page">사용자 정보</h1>
+        <div class="user-info">
+            <input type="hidden" value="{{id}}" id="user-id">
+            <div id="user-profile">
+                <label class="control-label">프로필</label>
+                <input type="file" id="user-image" name="file" multiple accept="image/*">
+                <img id="user-image-preview" src="./images/{{profile.fileName}}" alt="{{profle.fileOriginName}}" >
+            </div>
+            <div class="form-group">
+                <label class="control-label">이메일</label>
+                <input type="text" class="form-control" name="email" id="user-email" value="{{email}}" readonly>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">이름</label>
+                <input type="text" class="form-control" name="name" id="user-name" value="{{name}}">
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">이동전화</label>
+                <input type="text" class="form-control" name="phoneNumber"
+                       placeholder="전화번호 입력 형식(010-0000-0000)" value="{{phoneNumber}}"/>
+            </div>
+
+        </div>
+        <input type="submit" value="변경">
+
+    </form>
+</div>
+{{/ loginedUser }}
+{{/partial}}
+
+{{> base }}
