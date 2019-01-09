@@ -9,7 +9,8 @@ import utils.ValidateRegex;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
@@ -28,6 +29,7 @@ public class SignUpDTO {
     private String password;
 
     @NotEmpty
+    @Pattern(regexp = ValidateRegex.PASSWORD)
     private String confirmPassword;
 
     @NotEmpty
@@ -50,4 +52,5 @@ public class SignUpDTO {
                 .phoneNumber(phoneNumber)
                 .build();
     }
+
 }

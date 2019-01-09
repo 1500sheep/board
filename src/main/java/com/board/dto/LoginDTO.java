@@ -8,11 +8,13 @@ import utils.ValidateRegex;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 
-@Data
+@Getter
+@Setter
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
 public class LoginDTO {
+
     @NotEmpty
     @Pattern(regexp = ValidateRegex.EMAIL)
     private String email;
@@ -24,4 +26,5 @@ public class LoginDTO {
     public boolean matchPassword(PasswordEncoder passwordEncoder, User user) {
         return passwordEncoder.matches(password, user.getPassword());
     }
+
 }
