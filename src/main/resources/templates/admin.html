@@ -1,0 +1,38 @@
+{{#partial "header"}}
+<script src="/js/admin.js" type="module" defer></script>
+{{/partial}}
+{{#partial "contents"}}
+<div class="card">
+    {{# loginedUser }}
+    <input type="hidden" name="user-id" data-column="{{id}}">
+    {{/ loginedUser}}
+    <div class="card-header">
+        관리자 페이지
+    </div>
+    <div class="card-body">
+        <select class="select-type">
+            <option value="user">사용자</option>
+            <option value="post">게시글</option>
+            <option value="reply">댓글</option>
+        </select>
+        <hr/>
+        <table class="table">
+            <thead>
+            <tr align="center">
+                <th class="th-id">번호</th>
+                <th class="th-email">이메일</th>
+                <th class="th-data">이름</th>
+                <th>삭제</th>
+            </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+    </div>
+    <nav aria-label="...">
+        <ul class="pagination">
+        </ul>
+    </nav>
+</div>
+{{/partial}}
+{{> base }}
