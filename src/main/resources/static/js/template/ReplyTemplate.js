@@ -14,12 +14,12 @@ export function registerReplyTemplate() {
 }
 
 export function replyTemplate({writer, comment}) {
-    const profileUrl = writer.profile ? writer.profile.fileUrl : '';
+    const profileFileName = writer.profile ? writer.profile.fileName : '';
 
     return `<li class='post-reply'>
                <div class='post-reply-wrap'>
                    <div class='post-reply-profile'>
-                   <img alt='${writer.name}-profile' src='${profileUrl}'>
+                   <img alt='${writer.name}-profile' src='./images/${profileFileName}'>
                    </div>
                    <div class='post-reply-name'>
                        <p>${writer.name}</p>
