@@ -24,4 +24,8 @@ public class UnAuthenticationException extends RestException {
     public static UnAuthenticationException invalidUser() {
         return new UnAuthenticationException("user", "유저가 다릅니다");
     }
+
+    public static UnAuthenticationException invalidFile(String errorMessage) {
+        return new UnAuthenticationException("file", "errorMessage");
+    }
 }
